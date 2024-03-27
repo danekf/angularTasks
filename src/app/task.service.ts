@@ -1,17 +1,17 @@
 import { Injectable } from '@angular/core';
-import { Task } from './task/task.component'
+import { Task } from './task/task.component';
+import { HttpClient } from '@angular/common/http'
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TaskService {
-  tasks: Task[] = [
-    { id: 1, description: 'Buy groceries', completed: false },
-    { id: 2, description: 'Walk the dog', assignee: 'John', completed: false },
-    { id: 3, description: 'Do laundry', completed: true },
-  ];
+  private backendUrl = 'http://localhost:3000'; // URL to your backend
 
-  getTasks(): Task[] {
-    return this.tasks
+  constructor(private http: HttpClient) {} // Inject HttpClient
+
+  getTasks(): Observable<Task[]> {
+    return this.http.get<Task[]>(`${this.backendUrl}/tasks`);
   }
 }

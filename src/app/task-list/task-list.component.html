@@ -1,4 +1,9 @@
 <div class="task-list">
   <h2>Open Tasks</h2>
-  <app-task *ngFor="let task of tasks" [task]="task"></app-task>
+  <div class="assignees">
+    <h2>Assignees</h2>
+    <ul>
+      <li *ngFor="let assignee of getUniqueAssignees()">{{ assignee }}</li>
+    </ul>
+  </div>
 </div>
