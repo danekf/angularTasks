@@ -11,6 +11,9 @@
 npm-debug.log
 yarn-error.log
 
+# angular and vscode stuff
+**/.angular/cache
+
 # IDEs and editors
 .idea/
 .project
