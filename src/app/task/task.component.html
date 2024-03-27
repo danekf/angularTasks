@@ -1,0 +1,4 @@
+<div class="task" [class.completed]="task.completed" (click)="toggleCompleted()">
+  <p>{{ task.description }}</p>
+  <div *ngIf="task.assignee">Assigned to: {{ task.assignee }}</div>
+</div>

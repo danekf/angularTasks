@@ -1,0 +1,12 @@
+.task {
+  background-color: #f4f4f4;
+  padding: 10px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.task.completed {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
